@@ -1,0 +1,63 @@
+{
+  "name": "@humorhan/cva",
+  "version": "0.0.8",
+  "description": "create vue app",
+  "main": "index.js",
+  "bin": {
+    "cva": "bin/cva.js"
+  },
+  "scripts": {
+    "prepare": "husky install",
+    "lint:js": "eslint --fix"
+  },
+  "lint-staged": {
+    "**/*.js": [
+      "yarn lint:js"
+    ]
+  },
+  "author": "humorHan",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/plugin-proposal-export-default-from": "^7.14.5",
+    "@babel/plugin-transform-runtime": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "@babel/runtime-corejs3": "^7.15.3",
+    "@vue/compiler-sfc": "^3.2.6",
+    "babel-loader": "^8.2.2",
+    "chalk": "^4.1.2",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "commander": "^8.1.0",
+    "core-js": "^3.16.4",
+    "css-loader": "^6.2.0",
+    "css-minimizer-webpack-plugin": "^3.0.2",
+    "html-webpack-plugin": "^5.3.2",
+    "mini-css-extract-plugin": "^2.2.0",
+    "ora": "5.4.1",
+    "postcss-loader": "^6.1.1",
+    "postcss-preset-env": "^6.7.0",
+    "resolve-url-loader": "^5.0.0-beta.1",
+    "sass": "1.39.0",
+    "sass-loader": "^12.1.0",
+    "style-loader": "^3.2.1",
+    "terser-webpack-plugin": "^5.1.4",
+    "vue-loader": "16.4.1",
+    "vue-loader15": "npm:vue-loader@15.9.8",
+    "webpack": "^5.50.0",
+    "webpack-bundle-analyzer": "^4.4.2",
+    "webpack-dev-server": "^4.0.0",
+    "webpack-merge": "^5.8.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-friendly-formatter": "^4.0.1",
+    "eslint-plugin-import": "^2.24.0",
+    "husky": "^7.0.1",
+    "lint-staged": "^11.1.2"
+  },
+  "engines": {
+    "node": "^12.20.0 || >=14.0.0"
+  }
+}
