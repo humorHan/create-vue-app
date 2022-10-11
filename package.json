@@ -1,6 +1,6 @@
 {
   "name": "@humorhan/cva",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "create vue app",
   "main": "index.js",
   "bin": {
