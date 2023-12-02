@@ -4,7 +4,8 @@
   "description": "create vue app",
   "main": "index.js",
   "bin": {
-    "cva": "bin/cva.js"
+    "cva": "bin/cva.js",
+    "cva-tools": "bin/cva-tools.js"
   },
   "scripts": {
     "prepare": "husky install",
@@ -54,7 +55,9 @@
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-friendly-formatter": "^4.0.1",
     "eslint-plugin-import": "^2.24.0",
+    "execa": "5.1.1",
     "husky": "^7.0.1",
+    "inquirer": "8.2.0",
     "lint-staged": "^11.1.2"
   },
   "engines": {
