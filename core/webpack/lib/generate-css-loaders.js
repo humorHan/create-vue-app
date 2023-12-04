@@ -1,12 +1,12 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 /**
- * 获取style-loader的规则
+ * 获取vue-style-loader的规则
  * @param {*} isProduction mode是否是production模式
  */
 function getStyleLoaderRule(isProduction) {
   return {
-    loader: isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
+    loader: isProduction ? MiniCssExtractPlugin.loader : 'vue-style-loader',
     options: isProduction ? {} : {
       injectType: 'styleTag'
     },
