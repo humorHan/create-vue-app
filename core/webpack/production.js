@@ -12,7 +12,6 @@ const mode = 'production';
 const isProduction = mode === 'production';
 module.exports = merge(baseConfig, {
   mode,
-  cache: false,
   watch: false,
   devtool: false,
   output: {

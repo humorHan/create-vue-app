@@ -13,6 +13,17 @@ module.exports = {
     libraryTarget: 'umd',
     assetModuleFilename: 'images/[hash][ext][query]'
   },
+  cache: {
+    type: 'filesystem',
+    cacheDirectory: path.resolve(process.cwd(), 'node_modules/.cache/cva'),
+    buildDependencies: {
+      config: [
+        'package.json',
+        'package-lock.json',
+        'yarn.lock',
+      ].map((item) => path.resolve(process.cwd(), item))
+    }
+  },
   resolve: {
     extensions: ['.js', '.vue', '.scss']
   },

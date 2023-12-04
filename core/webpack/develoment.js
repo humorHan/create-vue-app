@@ -1,4 +1,3 @@
-const webpack = require('webpack');
 const { merge } = require('webpack-merge');
 const htmlPlugin = require('./lib/html-plugin.js');
 const baseConfig = require('./base.js')
@@ -9,9 +8,7 @@ const mode = 'development';
 const isProduction = mode === 'production';
 module.exports = merge(baseConfig, {
   mode,
-  cache: true,
   devtool: 'inline-source-map',
-  watch: true,
   output: {
     publicPath: '/',
     filename: 'js/[name].js',
@@ -36,7 +33,6 @@ module.exports = merge(baseConfig, {
   },
   plugins: [
     htmlPlugin(isProduction),
-    new webpack.HotModuleReplacementPlugin(),
   ],
   devServer: {
     proxy: {
@@ -50,6 +46,7 @@ module.exports = merge(baseConfig, {
     },
     client: {
       progress: true,
+      logging: 'warn',
     },
     allowedHosts: ['.sankuai.com'],
     // quiet: true,
