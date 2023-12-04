@@ -19,13 +19,13 @@ module.exports = {
     buildDependencies: {
       config: [
         'package.json',
-        'package-lock.json',
+        // TODO 判断
         'yarn.lock',
       ].map((item) => path.resolve(process.cwd(), item))
     }
   },
   resolve: {
-    extensions: ['.js', '.vue', '.scss']
+    extensions: ['.js', '.vue', '.scss', '.jsx']
   },
   resolveLoader: {
     modules: [
@@ -50,7 +50,7 @@ module.exports = {
         }
       }
     }, {
-      test: /\.m?js$/,
+      test: /\.(m?js|jsx)$/,
       exclude: [
         /\bcore-js\b/,
         /\bwebpack\/buildin\b/,
@@ -61,6 +61,36 @@ module.exports = {
       },
       use: {
         loader: 'babel-loader',
+        // 使用业务配置！！
+
+        // options: {
+        //   presets: [
+        //     ['@babel/preset-env', {
+        //       useBuiltIns: 'usage',
+        //       corejs: 3.8,
+        //       targets: '> 0.25%, last 2 versions, not dead'
+        //     }],
+        //   ],
+        //   plugins: [
+        //     '@vue/babel-plugin-jsx',
+        //     ['@babel/plugin-transform-runtime', {
+        //       helpers: false,
+        //       regenerator: true,
+        //       useESModules: false,
+        //     }],
+        //     '@babel/plugin-proposal-export-default-from',
+        //     '@babel/plugin-proposal-export-namespace-from',
+        //     '@babel/proposal-class-properties',
+        //     '@babel/plugin-proposal-nullish-coalescing-operator',
+        //     '@babel/plugin-proposal-optional-chaining',
+        //     '@babel/plugin-syntax-dynamic-import',
+        //     '@babel/plugin-transform-spread',
+        //     '@babel/plugin-transform-modules-commonjs',
+        //     '@babel/proposal-object-rest-spread',
+        //   ],
+        //   sourceType: 'unambiguous',
+        //   comments: false,
+        // }
       }
     }]
   },
