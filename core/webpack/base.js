@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const path = require('path');
 const utils = require('./lib/utils.js');
 
 const { VueLoaderPlugin } = require(utils.isVue3() ? 'vue-loader' : 'vue-loader15');
@@ -15,6 +16,13 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.vue', '.scss']
   },
+  resolveLoader: {
+    modules: [
+      path.resolve(process.cwd(), 'node_modules'),
+      path.resolve(__dirname, '../../node_modules'),
+    ],
+  },
+
   stats: {
     errorDetails: true
   },
