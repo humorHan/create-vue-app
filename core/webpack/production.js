@@ -1,6 +1,6 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+// const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const { merge } = require('webpack-merge');
 const htmlPlugin = require('./lib/html-plugin.js');
@@ -39,7 +39,7 @@ module.exports = merge(baseConfig, {
   },
   optimization: {
     minimizer: [
-      new CssMinimizerPlugin(),
+      // new CssMinimizerPlugin(),
       new TerserPlugin({
         parallel: true,
         terserOptions: {
