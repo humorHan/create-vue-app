@@ -2,7 +2,7 @@ const path = require('path');
 
 const cwd = path.resolve(process.cwd());
 
-const packageInfo = require(path.resolve(cwd, 'package.json'));
+const packageInfo = require(path.resolve(cwd, 'node_modules', 'vue', 'package.json'))
 
 module.exports = {
   cwd,
@@ -10,7 +10,7 @@ module.exports = {
     return path.resolve(cwd, ...arguments);
   },
   isVue3() {
-    const vueVersion = packageInfo.dependencies.vue || packageInfo.devDependencies.vue || '';
+    const vueVersion = packageInfo.version || '';
     return vueVersion.startsWith('3');
   }
 };
