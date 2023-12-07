@@ -72,5 +72,13 @@
     "bin",
     "core",
     "examples"
+  ],
+  "keywords": [
+    "cli",
+    "脚手架",
+    "webpack5",
+    "cva",
+    "vue3",
+    "vue2"
   ]
 }
