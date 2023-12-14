@@ -10,7 +10,7 @@ const utils = require('./lib/utils');
 
 const mode = 'production';
 const isProduction = mode === 'production';
-module.exports = merge(baseConfig, {
+module.exports = () => merge(baseConfig, {
   mode,
   watch: false,
   devtool: false,

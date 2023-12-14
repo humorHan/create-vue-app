@@ -1,11 +1,11 @@
 const webpack = require('webpack');
 const { merge } = require('webpack-merge');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
-const devConfig = require('./webpack/develoment.js');
-const prodConfig = require('./webpack/production.js');
+const getDevConfig = require('./webpack/develoment.js');
+const getProdConfig = require('./webpack/production.js');
 
 module.exports = function parseConfig(mode, userConfig) {
-  const defaultConfig = mode === 'development' ? devConfig : prodConfig;
+  const defaultConfig = mode === 'development' ? getDevConfig() : getProdConfig();
   this.userCvaConfig = userConfig.cva || {};
   delete userConfig.cva;
 

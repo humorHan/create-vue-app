@@ -2,8 +2,6 @@ const webpack = require('webpack');
 const path = require('path');
 const utils = require('./lib/utils.js');
 
-const { VueLoaderPlugin } = require(utils.isVue3() ? 'vue-loader' : 'vue-loader15');
-
 module.exports = {
   // entry: {
   //   index: utils.resolve('src/index.js'),
@@ -95,7 +93,7 @@ module.exports = {
     }]
   },
   plugins: [
-    new VueLoaderPlugin(),
+    new (require(utils.isVue3() ? 'vue-loader' : 'vue-loader15')).VueLoaderPlugin(),
     new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /zh-cn/),
   ],
   optimization: {
