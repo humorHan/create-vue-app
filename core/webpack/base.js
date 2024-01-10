@@ -2,12 +2,9 @@ const webpack = require('webpack');
 const path = require('path');
 const utils = require('./lib/utils.js');
 
-module.exports = {
-  // entry: {
-  //   index: utils.resolve('src/index.js'),
-  // },
+module.exports = () => ({
   output: {
-    path: utils.resolve('build'),
+    path: path.resolve(utils.cwd, 'build'),
     libraryTarget: 'umd',
     assetModuleFilename: 'images/[hash][ext][query]'
   },
@@ -112,4 +109,4 @@ module.exports = {
       name: 'manifest'
     }
   },
-};
+});

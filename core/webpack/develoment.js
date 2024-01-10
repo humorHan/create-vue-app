@@ -6,7 +6,7 @@ const utils = require('./lib/utils');
 
 const mode = 'development';
 const isProduction = mode === 'production';
-module.exports = () => merge(baseConfig, {
+module.exports = () => merge(baseConfig(), {
   mode,
   devtool: 'inline-source-map',
   output: {
